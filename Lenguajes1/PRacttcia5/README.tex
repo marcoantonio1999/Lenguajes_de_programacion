@@ -1,0 +1,53 @@
+% Lenguajes de Programación 2019-1
+% Plantilla para reportes de laboratorio.
+
+\documentclass{article}
+
+\usepackage{authblk}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+
+\title{ Práctica 5}
+\author{Marco Antonio Orduña Avila y Luis Enrique Sánchez Lara}
+\affil{Facultad de Ciencias, UNAM}
+\date{6 de Noviembre de 2019}
+
+\begin{document}
+
+\maketitle
+
+\section{Descripción del programa}
+
+Para la implementación se creo un nuevo módulo llamado Memory en el que a nuestro programa funcional le agregaremos algunos efectos laterales los cuales son la asignación donde tendremos almacenamiento mediante las referencias de memoria y operandos de secuencia de iteración, Para la memoria tendremos operadores de alojamiento y recuperación.
+ 
+\section{Entrada y ejecución}
+
+Para poder compilar e interpretar el archivo basta con pararse en la carpeta src y poner el comando ghci BAE/Memory.hs
+
+\begin{lstlisting}[language=Haskell]
+Prelude> newAddress [ ( 0 , B False ) , ( 2 , I 11 ) , (3 , I 6) ]
+L 1
+Prelude>  access 1 [(0,B False),(2 ,I 3),(5 ,I 2),(6 ,I 8),(6 ,I 4)]
+Nothing 
+Prelude> update(0,Let"x"(V "x")(Add(V "x")(I 8)))[(0,I 21),(1 ,Void),( 2, I 12)]
+Just [(0,Let (V["x"], x.Add (V["x"], I 8))),(1,Void),(2,I 12)]
+
+Prelude>  frVars ( Assig  (L 2 ) (Add ( Mul(I 5)(I 8) ) (V "v" )) )
+[ "z" ]
+Prelude> subst (Add (V "x" ) ( I 5 ) ) ( "x" , I 10 )
+Add ( I 10 ) ( I 5 )
+Prelude> eval1 ( [ ( 0 , B False ) ] , ( Let "x"(I 1 )(Add(V "x")(I 2))))
+( [ ( 0 , B False ) ] , Add ( I 1 ) ( I 2 ) )
+Prelude> evals ( [ ], Assig (Alloc(B False))(Add(I 1)(I 9)))
+([ ( 0 , I 1 0 ) ] , Void)
+Prelude> evale (Or (Eq (Add ( I 0 ) ( I 0 ) ) ( I 0 ) )(Eq ( I 1 ) ( I 10 )))
+B True
+
+\end{lstlisting}
+
+\section{Conclusiones}
+
+Con respecto a las conclusiones poder decir que podemos darle seguridad reformulando las propiedades de preservación y progreso en el marco, y que crear el miniC es mas facil en la practica que en la teoría. 
+
+\end{document}
