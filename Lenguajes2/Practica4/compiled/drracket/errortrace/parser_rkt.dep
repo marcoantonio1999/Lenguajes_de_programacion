@@ -1,0 +1,1 @@
+("7.8" racket ("8f883d40e8ef94ee72f1ae3afeca1436960a1d57" . "f0858ac9c013e4a1cf4e0f8d8a31ff10f6803740") #"C:\\Users\\familia\\Documents\\MARCO\\UNAM\\Lenguajes de Programacion\\lengaujes 2\\Practica4\\./grammars.rkt" (collects #"errortrace" #"errortrace-key.rkt") (collects #"plai" #"lang" #"reader.rkt") (collects #"plai" #"main.rkt") (collects #"racket" #"runtime-config.rkt"))

@@ -1,0 +1,17 @@
+#lang plai
+(require (file "./grammars.rkt"))
+
+;; Toma una lista de números, symbolos o listas
+;; y la traduce a un árbol de sintaxis abstracta CFWBAE
+;; A::=<number>
+;;    | <symbol>
+;;    | listof(A)
+;; parse: A -> SCFWBAE
+;; parse: s-expression -> SCFWBAE
+(define (parse sexp) ... )
+
+;; Toma una lista de parejas de condiciones y genera la sintáxis abstracta
+;; de una condicional en CFWBAE
+;; parse-cond: A -> SCFWBAE
+;; parse-cond: s-expression -> SCFWBAE
+(define (parse-cond cond-expr) ... )
